@@ -9,6 +9,8 @@
 " modified from html.vim
 if exists("loaded_matchit")
   let b:match_ignorecase = 0
+  let b:match_skip='synIDattr(synID(line("."),col("."),1),"name")
+        \ =~? "jsString\\|jsArrowFunction\\|jsComment"'
   let s:jsx_match_words = '(:),\[:\],{:},<:>,' .
         \ '<\@<=\([^/][^ \t>]*\)[^>]*\%(/\@<!>\|$\):<\@<=/\1>'
   let b:match_words = exists('b:match_words')
